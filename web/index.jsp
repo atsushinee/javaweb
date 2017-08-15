@@ -13,7 +13,7 @@
         border-radius: 20px;
         /*-moz-border-radius: 20px;*/
         padding: 20px;
-        width: 180px;
+        width: 300px;
     }
 </style>
 <head>
@@ -21,13 +21,19 @@
 </head>
 <body>
 <div id="border">
-    <form name="form" method="post" action="">
-        请输入姓名：<label for="realName"></label><input name="realName" id="realName" size="40">
+    <form name="form" method="post" action="${pageContext.request.contextPath}/new">
+        请输入姓名：<label for="realName"></label><input name="name" id="realName" size="40">
         <input name="Button" type="button" onclick="checkRealName()" value="检测">
         <br>
         <input name="Button" type="button" onclick="openNew()" value="打开">
         <input name="Button" type="button" onclick="closeNew()" value="关闭">
+        <br>
+        age：<label for="id"></label><input name="age" id="id" size="40">
+        <br>
+        mail：<label for="name"></label><input name="mail" id="name" size="40">
+        <input name="Button" type="submit" value="打开新页面">
     </form>
+    <%=application.getAttribute("count")%>
 </div>
 </body>
 <script>
@@ -46,10 +52,9 @@
         }
     }
 
-    let windowopen;
 
     function openNew() {
-        windowopen = window.open("index.jsp", "asda");
+        window.open("comment.jsp", "asda");
     }
 
     function closeNew() {
